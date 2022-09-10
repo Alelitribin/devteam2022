@@ -8,5 +8,7 @@ namespace Torneo.App.Persistencia
         
         public IEnumerable<Partido> GetAllPartidos();
             
+        public Partido GetPartido(int idPartido);
+        
     }
 }
