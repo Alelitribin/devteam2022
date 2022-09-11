@@ -3,7 +3,7 @@
 @{
 }
 <h1>Listado de posiciones</h1>
-<a class="btn btn-primary" asp-page="./Create">Crear posiciones</a>
+@* <a class="btn btn-primary" asp-page="./Create">Crear posiciones</a> *@
 <table class="table table-hover">
     <thead>
         <tr>
@@ -13,10 +13,12 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var pos in Model.posiciones)
+        @foreach(var posi in Model.posiciones)
         {
             <tr>
-                <th scope="row">@pos.Id</th>
-                <td>@pos.Nombre</td>
+                <th scope="row">@posi.Id</th>
+                <td>@posi.Nombre</td>
             </tr>
         }
+    </tbody>
+</table>

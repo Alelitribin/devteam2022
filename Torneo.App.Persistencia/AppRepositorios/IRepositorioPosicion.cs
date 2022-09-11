@@ -5,5 +5,7 @@ namespace Torneo.App.Persistencia
     {
         public Posicion AddPosicion(Posicion posicion);
         public IEnumerable<Posicion> GetAllPosiciones();
+        public Posicion GetPosicion(int idPosicion);
     }
+    
 }
