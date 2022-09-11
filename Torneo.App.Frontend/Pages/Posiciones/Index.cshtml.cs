@@ -20,17 +20,17 @@ namespace Torneo.App.Frontend.Pages.Posiciones
             posiciones = _repoPosicion.GetAllPosiciones();
         }
 
-        // public IActionResult OnPost(Posicion pos)
-        // {
-        //     if (ModelState.IsValid)
-        //     {
-        //         _repoPosicion.AddPosicion(pos);
-        //         return RedirectToPage("Index");
-        //     }
-        //     else
-        //     {
-        //         return Page();
-        //     }
-        // }
+         public IActionResult OnPost(Posicion pos)
+        {
+            if (ModelState.IsValid)
+            {
+                _repoPosicion.AddPosicion(pos);
+                return RedirectToPage("Index");
+            }
+            else
+            {
+                return Page();
+            }
+        }
     }
 }

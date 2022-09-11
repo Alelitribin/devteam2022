@@ -5,21 +5,10 @@
 <h1>Nueva Posicion</h1>
 <form method="post">
     <div class="form-group">
-        <label asp-for="dt.Nombre"></label>
-        <input asp-for="dt.Nombre" class="form-control" placeholder="Ingrese el nombre del DT">
-        <span class="text-danger" asp-validation-for="dt.Nombre"></span>
+        <label asp-for="pos.Nombre"></label>
+        <input asp-for="pos.Nombre" class="form-control" placeholder="Ingrese el nombre de la Posicion">
+        <span class="text-danger" asp-validation-for="pos.Nombre"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="dt.Documento"></label>
-        <input asp-for="dt.Documento" class="form-control">
-        <span class="text-danger" asp-validation-for="dt.Documento"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="dt.Telefono"></label>
-        <input asp-for="dt.Telefono" class="form-control">
-        <span class="text-danger" asp-validation-for="dt.Telefono"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary btn-block">Crear director técnico</button>
+    <button type="submit" class="btn btn-primary btn-block">Crear posicion </button>
 </form>
 <a class="btn btn-secondary" asp-page="./Index">Volver</a>
