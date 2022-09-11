@@ -1,37 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
 using Torneo.App.Dominio;
 using Torneo.App.Persistencia;
 
 namespace Torneo.App.Frontend.Pages.Posiciones
 {
-    public class CreateModel : PageModel
+    public class IndexModel : PageModel
     {
         private readonly IRepositorioPosicion _repoPosicion;
-        public Posiciones pos { get; set; }
+        public IEnumerable<Posicion> posiciones { get; set; }
 
-        public CreateModel(IRepositorioPosicion repoPosicion)
+        public IndexModel(IRepositorioPosicion repoPosicion)
         {
             _repoPosicion = repoPosicion;
         }
 
         public void OnGet()
         {
-            pos = new Posicion();
+            posiciones = _repoPosicion.GetAllPosiciones();
         }
 
-        public IActionResult OnPost(Posicion pos)
-        {
-            if (ModelState.IsValid)
-            {
-                _repoPosicion.AddPosicion(pos);
-                return RedirectToPage("Index");
-            }
-            else
-            {
-                return Page();
-            }
-        }
+        // public IActionResult OnPost(Posicion pos)
+        // {
+        //     if (ModelState.IsValid)
+        //     {
+        //         _repoPosicion.AddPosicion(pos);
+        //         return RedirectToPage("Index");
+        //     }
+        //     else
+        //     {
+        //         return Page();
+        //     }
+        // }
     }
 }
