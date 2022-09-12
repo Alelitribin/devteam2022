@@ -1,0 +1,32 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Jugadores.IndexModel
+@{
+}
+<h1>Listado de Jugadores</h1>
+<a class="btn btn-primary" asp-page="./Create">Crear jugador</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>  
+             <th scope="col">Equipo</th>  
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var jugador in Model.jugadores)
+        {
+            <tr>
+                <th scope="row">@jugador.Id</th>
+                <td>@jugador.Nombre</td>
+                <td>@jugador.Equipo.Nombre</td>
+
+                <td>
+                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@jugador.Id">
+                        Detalle   
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
