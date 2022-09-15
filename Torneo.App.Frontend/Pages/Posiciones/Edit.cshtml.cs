@@ -30,10 +30,16 @@ namespace Torneo.App.Frontend.Pages.Posiciones
 
         public IActionResult OnPost(Posicion posicion)
         {
-            _repoPosicion.UpdatePosicion(posicion);
-            return RedirectToPage("Index");
+            if (ModelState.IsValid)
+            {
+                _repoPosicion.UpdatePosicion(posicion);
+                return RedirectToPage("Index");
+            }
+            else
+            {
+                return Page();
+            }
         }
-
     }
 }
 
