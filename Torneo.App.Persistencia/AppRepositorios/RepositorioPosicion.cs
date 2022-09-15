@@ -19,6 +19,17 @@ namespace Torneo.App.Persistencia
         {
             var posicionEncontrado = _dataContext.Posiciones.Find(idPosicion);
             return posicionEncontrado;
-        }       
+        }   
+
+        public Posicion UpdatePosicion(Posicion posicion)
+        {
+            var posicionEncontrado = _dataContext.Posiciones.Find(posicion.Id);
+            if (posicionEncontrado != null)
+            {
+                posicionEncontrado.Nombre = posicion.Nombre;
+                _dataContext.SaveChanges();
+            }
+            return posicionEncontrado;
+        }    
     }
 }

@@ -18,6 +18,11 @@
             <tr>
                 <th scope="row">@pos.Id</th>
                 <td>@pos.Nombre</td>
+                <td>
+                    <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@pos.Id">
+                        Editar
+                    </a>
+                </td>
             </tr>
         }
     </tbody>
