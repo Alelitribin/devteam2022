@@ -1,0 +1,51 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Partidos.EditModel
+@{
+}
+<h1>Editar partido</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="partido.Id"></label>
+        <input asp-for="partido.Id" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="partido.FechaHora"></label>
+        <input asp-for="partido.FechaHora" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="equipoLocalSelected"></label>
+        <select asp-for="equipoLocalSelected" asp-items="@Model.equipoLocalOptions" name="idEquipoLocal" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="partido.MarcadorLocal"></label>
+        <input asp-for="partido.MarcadorLocal" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="equipoVisitanteSelected"></label>
+        <select asp-for="equipoVisitanteSelected" asp-items="@Model.equipoVisitanteOptions" name="idEquipoVisitante" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="partido.MarcadorVisitante"></label>
+        <input asp-for="partido.MarcadorVisitante" class="form-control">
+    </div>
+    @* <div class="form-group">
+        <label asp-for="arbitroSelected"></label>
+        <select asp-for="arbitroSelected" asp-items="@Model.arbitroOptions" name="idarbitro" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="estadioSelected"></label>
+        <select asp-for="estadioSelected" asp-items="@Model.estadioOptions" name="idestadio" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="novedadSelected"></label>
+        <select asp-for="novedadSelected" asp-items="@Model.novedadOptions" name="idnovedad" class="form-control">
+        </select>
+    </div> *@
+
+    <button type="submit" class="btn btn-primary btn-block">Actualizar partido</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>
