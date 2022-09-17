@@ -42,11 +42,8 @@ namespace Torneo.App.Persistencia
             jugadorEncontrado.Numero = jugador.Numero;
             jugadorEncontrado.Equipo = equipoEncontrado;
             jugadorEncontrado.Posicion = posicionEncontrado;
-
-            ///partidoEncontrado.Visitante = equipoVisEncontrado;
-            partidoEncontrado.MarcadorVisitante = partido.MarcadorVisitante;
             _dataContext.SaveChanges();
-            return partidoEncontrado;
+            return jugadorEncontrado;
         }
         
 

@@ -32,9 +32,9 @@ namespace Torneo.App.Frontend.Pages.Jugadores
         {
             jugador = _repoJugador.GetJugador(id);
             equipoOptions = new SelectList(_repoEquipo.GetAllEquipos(), "Id", "Nombre");
-            equipoSelected = partido.Equipo.Id;
+            equipoSelected =jugador.Equipo.Id;
             posicionOptions = new SelectList(_repoPosicion.GetAllPosiciones(), "Id", "Nombre");
-            posicionSelected = partido.Posicion.Id;
+            posicionSelected = jugador.Posicion.Id;
            
            
             if (jugador == null)
