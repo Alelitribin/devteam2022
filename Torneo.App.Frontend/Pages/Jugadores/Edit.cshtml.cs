@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Torneo.App.Frontend.Pages.Jugadores
 
 {
-    public class EditModel : PageModel
-    {
+     public class EditModel : PageModel
+     {
         private readonly IRepositorioJugador _repoJugador;
         private readonly IRepositorioEquipo _repoEquipo;
         private readonly IRepositorioPosicion _repoPosicion;
@@ -52,5 +52,5 @@ namespace Torneo.App.Frontend.Pages.Jugadores
             _repoJugador.UpdateJugador(jugador, idEquipo, idPosicion);
             return RedirectToPage("Index");
         }
-    }
+     }
 }

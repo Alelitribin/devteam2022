@@ -46,12 +46,12 @@ namespace Torneo.App.Persistencia
             var partidoEncontrado = GetPartido(partido.Id);
             var equipoLocEncontrado = _dataContext.Equipos.Find(idLocal);
             var equipoVisEncontrado = _dataContext.Equipos.Find(idVisitante);
-            partido.Local =  equipoLocEncontrado;
-            partido.Visitante = equipoVisEncontrado;
+            // partido.Local =  equipoLocEncontrado;
+            // partido.Visitante = equipoVisEncontrado;
+            partidoEncontrado.Local = equipoLocEncontrado;
+            partidoEncontrado.Visitante = equipoVisEncontrado;
             partidoEncontrado.FechaHora = partido.FechaHora;
-            ///partidoEncontrado.Local = equipoLocEncontrado;
             partidoEncontrado.MarcadorLocal = partido.MarcadorLocal;
-            ///partidoEncontrado.Visitante = equipoVisEncontrado;
             partidoEncontrado.MarcadorVisitante = partido.MarcadorVisitante;
             _dataContext.SaveChanges();
             return partidoEncontrado;
