@@ -41,6 +41,20 @@ namespace Torneo.App.Persistencia
             .FirstOrDefault();
             return partidoEncontrado;
         }
-
+        public Partido UpdatePartido(Partido partido, int idLocal, int idVisitante)
+        {
+            var partidoEncontrado = GetPartido(partido.Id);
+            var equipoLocEncontrado = _dataContext.Equipos.Find(idLocal);
+            var equipoVisEncontrado = _dataContext.Equipos.Find(idVisitante);
+            // partido.Local =  equipoLocEncontrado;
+            // partido.Visitante = equipoVisEncontrado;
+            partidoEncontrado.Local = equipoLocEncontrado;
+            partidoEncontrado.Visitante = equipoVisEncontrado;
+            partidoEncontrado.FechaHora = partido.FechaHora;
+            partidoEncontrado.MarcadorLocal = partido.MarcadorLocal;
+            partidoEncontrado.MarcadorVisitante = partido.MarcadorVisitante;
+            _dataContext.SaveChanges();
+            return partidoEncontrado;
+        }
     }
 }
