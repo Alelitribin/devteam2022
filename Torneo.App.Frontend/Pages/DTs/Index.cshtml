@@ -11,14 +11,18 @@
             <th scope="col">Nombre</th>
             <th scope="col">Acción</th>
         </tr>
+        </td>
     </thead>
     <tbody>
-        @foreach(var dt in Model.dts)
+        @foreach (var dt in Model.dts)
         {
             <tr>
                 <th scope="row">@dt.Id</th>
                 <td>@dt.Nombre</td>
                 <td>
+                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@dt.Id">
+                        Detalle
+                    </a>
                     <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@dt.Id">
                         Editar
                     </a>
