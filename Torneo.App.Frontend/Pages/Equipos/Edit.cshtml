@@ -1,4 +1,26 @@
 ﻿@page
-@model Torneo.App.Frontend.Pages.Equipos.EditModel
+@model Torneo.App.Frontend.Pages.Equipos.EditModel   //Por revisar (Daniel Sánchez)
 @{
 }
+<h1>Actualizar Equipo</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Equipo.Id"></label>
+        <input asp-for="Equipo.Id" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="Equipo.Nombre"></label>
+        <input asp-for="Equipo.Nombre" class="form-control" placeholder="Ingrese el nombre del Equipo">
+    </div>
+    <div class="form-group">
+        <label asp-for="Equipo.Municipio.Nombre"></label>
+        <input asp-for="Equipo.Municipio.Nombre" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Equipo.dt.Id"></label>
+        <input asp-for="Equipo.dt.Id" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Actualizar Equipo</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index">Volver</a>

@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Torneo.App.Dominio;
 using Torneo.App.Persistencia;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
+ 
 namespace Torneo.App.Frontend.Pages.DTs
 {
     public class EditModel : PageModel
