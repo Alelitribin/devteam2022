@@ -2,9 +2,10 @@
 @model Torneo.App.Frontend.Pages.Partidos.IndexModel
 @{
 }
-<a class="btn btn-primary" asp-page="./Create">Crear partido</a>
+
 <h1>Nuevo Partido</h1>
-<table class="table">
+<a class="btn btn-primary btn-lg" asp-page="./Create">Crear partido</a>
+<table class="table table-dark table-striped">
     <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
@@ -23,10 +24,10 @@
                 <td>@partido.Local.Nombre</td>
                 <td>@partido.Visitante.Nombre</td>
                 <td>
-                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@partido.Id">
+                    <a class="btn btn-success" asp-page="./Details" asp-route-id="@partido.Id">
                         Detalle
                     </a>
-                    <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@partido.Id">
+                    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@partido.Id">
                         Editar
                     </a>
                 </td>
