@@ -5,7 +5,6 @@ namespace Torneo.App.Persistencia
     public class RepositorioDT : IRepositorioDT
     {
         private readonly DataContext _dataContext = new DataContext();
-        
         public DirectorTecnico AddDT(DirectorTecnico directorTecnico)
         {
             var dtInsertado = _dataContext.DirectoresTecnicos.Add(directorTecnico);
@@ -15,12 +14,7 @@ namespace Torneo.App.Persistencia
 
         public IEnumerable<DirectorTecnico> GetAllDTs()
         {
-            var dts = _dataContext.DirectoresTecnicos
-                .Include(e => e.Nombre)
-                .Include(e => e.Documento)
-                .Include(e => e.Telefono)
-                .ToList();
-            return dts;
+            return _dataContext.DirectoresTecnicos;
         }
 
         public DirectorTecnico UpdateDT(DirectorTecnico dt)
@@ -39,9 +33,9 @@ namespace Torneo.App.Persistencia
         {
             var dtEncontrado = _dataContext.DirectoresTecnicos
             .Where(e => e.Id == idDT)
-            .Include(e => e.Nombre)
-            .Include(e => e.Documento)
-            .Include(e => e.Telefono)
+            // .Include(e => e.Nombre)
+            // .Include(e => e.Documento)
+            // .Include(e => e.Telefono)
             .FirstOrDefault();
             return dtEncontrado;
         }
