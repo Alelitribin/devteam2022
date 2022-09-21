@@ -2,25 +2,22 @@
 @model Torneo.App.Frontend.Pages.DTs.DetailsModel
 @{
 }
-<h1>Detalle de los Directores Tecnicos</h1>
 <table class="table table-striped">
     <tr>
         <th scope="col">Id</th>
-        <td>@Model.DT.Id</td>
+        <td>@Model.dt.Id</td>
     </tr>
     <tr>
         <th scope="col">Nombre</th>
-        <td>@Model.DT.Nombre</td>
+        <td>@Model.dt.Nombre</td>
     </tr>
     <tr>
         <th scope="col">Documento</th>
-        <td>@Model.DT.Documento</td>
+        <td>@Model.dt.Documento</td>
     </tr>
     <tr>
         <th scope="col">Telefono</th>
-        <td>@Model.DT.Telefono</td>
+        <td>@Model.dt.Telefono</td>
     </tr>
-    
 </table>
-<a class="btn btn-dark" asp-page="./Index">Volver</a>
-
+<a class="btn btn-primary" asp-page="./Index">Volver</a>

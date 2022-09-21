@@ -8,7 +8,7 @@ namespace Torneo.App.Frontend.Pages.DTs
     public class DetailsModel : PageModel
     {
         private readonly IRepositorioDT _repoDT;
-        public DirectorTecnico DT { get; set; }
+        public DirectorTecnico dt { get; set; }
 
         public DetailsModel(IRepositorioDT repoDT)
         {
@@ -17,8 +17,8 @@ namespace Torneo.App.Frontend.Pages.DTs
 
         public IActionResult OnGet(int id)
         {
-            DT = _repoDT.GetDT(id);
-            if (DT == null)
+            dt = _repoDT.GetDT(id);
+            if (dt == null)
             {
                 return NotFound();
             }
@@ -29,3 +29,4 @@ namespace Torneo.App.Frontend.Pages.DTs
         }
     }
 }
+
