@@ -2,9 +2,10 @@
 @model Torneo.App.Frontend.Pages.Municipios.IndexModel
 @{
 }
-<a class="btn btn-primary" asp-page="./Create">Crear municipio</a>
+
 <h1>Listado de municipios</h1>
-<table class="table">
+<a class="btn btn-primary btn-lg" asp-page="./Create">Crear municipio</a>
+<table class="table table-success table-striped">
     <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
@@ -17,10 +18,13 @@
         {
             <tr>
                 <th>@municipio.Id</th>
-                <td>@municipio.Nombre</td>
+                <td><b>@municipio.Nombre</b></td>
                 <td>
-                    <a class="btn btn-primary" asp-page="./Details" asp-route-id="@municipio.Id">
-                    Detalle
+                    <a class="btn btn-success" asp-page="./Details" asp-route-id="@municipio.Id">
+                        Detalle
+                    </a>
+                    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@municipio.Id">
+                        Editar
                     </a>
                 </td>
             </tr>

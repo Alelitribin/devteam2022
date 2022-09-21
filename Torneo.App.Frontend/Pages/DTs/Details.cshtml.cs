@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Torneo.App.Dominio;
 using Torneo.App.Persistencia;
 
-
 namespace Torneo.App.Frontend.Pages.DTs
 {
     public class DetailsModel : PageModel
