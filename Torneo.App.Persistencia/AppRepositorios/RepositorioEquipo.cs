@@ -33,7 +33,7 @@ namespace Torneo.App.Persistencia
             .FirstOrDefault();
             return equipoEncontrado;
         }
-      public Equipo UpdateEquipo(Equipo equipo, int idMunicipio, int idDT)
+        public Equipo UpdateEquipo(Equipo equipo, int idMunicipio, int idDT)
         {
             var equipoEncontrado = GetEquipo(equipo.Id);
             var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
@@ -43,6 +43,24 @@ namespace Torneo.App.Persistencia
             equipoEncontrado.DirectorTecnico = DTEncontrado;
             _dataContext.SaveChanges();
             return equipoEncontrado;
+        }
+
+        // para filtros
+        public IEnumerable<Equipo> GetEquiposMunicipio(int idMunicipio)
+        {
+            var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
+            var equipos = _dataContext.Equipos
+            .Where(e => e.Municipio == municipioEncontrado)
+            .Include(e => e.Municipio)
+            .Include(e => e.DirectorTecnico)
+            .ToList();
+            return equipos;
+        }
+        // busquedas
+        public IEnumerable<Equipo> SearchEquipos(string nombre)
+        {
+            return _dataContext.Equipos
+            .Where(e => e.Nombre.Contains(nombre));
         }
     }
 }

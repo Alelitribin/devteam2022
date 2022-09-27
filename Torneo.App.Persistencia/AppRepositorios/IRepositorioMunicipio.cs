@@ -7,5 +7,7 @@ namespace Torneo.App.Persistencia
         public IEnumerable<Municipio> GetAllMunicipios();
         public Municipio GetMunicipio(int idMunicipio);
         public Municipio UpdateMunicipio(Municipio municipio);
+        public Municipio DeleteMunicipio(int idMunicipio);
     }
+    
 }
