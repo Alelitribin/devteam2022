@@ -6,8 +6,8 @@
 <form method="post">
     <div class="form-group">
         <label asp-for="pos.Nombre"></label>
-        <input asp-for="pos.Nombre" class="form-control" placeholder="Ingrese el nombre de la Posicion">
-        <span class="text-danger" asp-validation-for="pos.Nombre"></span> 
+        <input asp-for="pos.Nombre" class="form-control" placeholder="Ingrese el nombre de la Posicion" required>
+        @* <span class="text-danger" asp-validation-for="pos.Nombre"></span>  *@
     </div>
     <button type="submit" class="btn btn-outline-info btn-block">Crear posicion </button>
 </form>

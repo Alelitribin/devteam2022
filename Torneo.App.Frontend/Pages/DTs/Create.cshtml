@@ -6,18 +6,18 @@
 <form method="post">
     <div class="form-group">
         <label asp-for="dt.Nombre"></label>
-        <input asp-for="dt.Nombre" class="form-control" placeholder="Ingrese el nombre del DT">
-        <span class="text-danger" asp-validation-for="dt.Nombre"></span>
+        <input asp-for="dt.Nombre" class="form-control" placeholder="Ingrese el nombre del DT" required>
+        @* <span class="text-danger" asp-validation-for="dt.Nombre"></span> *@
     </div>
     <div class="form-group">
         <label asp-for="dt.Documento"></label>
-        <input asp-for="dt.Documento" class="form-control">
-        <span class="text-danger" asp-validation-for="dt.Documento"></span>
+        <input asp-for="dt.Documento" class="form-control" required placefolder="Ingrese Documento">
+        @* <span class="text-danger" asp-validation-for="dt.Documento"></span> *@
     </div>
     <div class="form-group">
         <label asp-for="dt.Telefono"></label>
-        <input asp-for="dt.Telefono" class="form-control">
-        <span class="text-danger" asp-validation-for="dt.Telefono"></span>
+        <input asp-for="dt.Telefono" class="form-control" required placeholder="Ingrese Telefono">
+        @* <span class="text-danger" asp-validation-for="dt.Telefono"></span> *@
     </div>
 
     <button type="submit" class="btn btn-outline-info btn-block">Crear director técnico</button>
