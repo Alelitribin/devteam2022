@@ -35,13 +35,14 @@ namespace Torneo.App.Persistencia
         }
         public Municipio DeleteMunicipio(int idMunicipio)
         {
-        var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
-        if (municipioEncontrado != null)
-        {
-        _dataContext.Municipios.Remove(municipioEncontrado);
-        _dataContext.SaveChanges();
+            var municipioEncontrado = _dataContext.Municipios.Find(idMunicipio);
+            if (municipioEncontrado != null)
+            {
+            _dataContext.Municipios.Remove(municipioEncontrado);
+            _dataContext.SaveChanges();
+            }
+            return municipioEncontrado;
         }
-        return municipioEncontrado;
+        
     }
-  }
 }
